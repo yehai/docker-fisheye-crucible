@@ -49,14 +49,14 @@ GRANT ALL PRIVILEGES ON fisheye.* TO '[appuser]'@'172.17.0.3' IDENTIFIED BY '[ap
 Run docker using port 8060 on your host (if available):
 
 ```
-docker run -p 8060:8060 descoped/fisheye
+docker run -p 8060:8060 descoped/fisheye-crucible
 ```
 
 
 Run with data outside the container using a volume:
 
 ```
-$ docker run --name fisheye -v /var/fisheye:/var/atlassian-home -e CONTEXT_PATH=ROOT -e DATABASE_URL=mysql://[username]:[password]@172.17.0.2/fisheye -e INSTALL_CRUCIBLE= -p 8060:8060 descoped/fisheye
+$ docker run --name fisheye -v /var/fisheye:/var/atlassian-home -e CONTEXT_PATH=ROOT -e DATABASE_URL=mysql://[username]:[password]@172.17.0.2/fisheye -e INSTALL_CRUCIBLE= -p 8060:8060 descoped/fisheye-crucible
 ```
 
 
@@ -126,12 +126,12 @@ DATABASE_URL     | Connection URL specifying where and how to connect to a datab
 
 ## Source code
 
-If you want to contribute to this project or make use of the source code; you'll find it on [GitHub](https://github.com/descoped/docker-fisheye).
+If you want to contribute to this project or make use of the source code; you'll find it on [GitHub](https://github.com/descoped/docker-fisheye-crucible).
 
 ### Building the image
 
 ```
-docker build -t descoped/fisheye .
+docker build -t descoped/fisheye-crucible .
 ```
 
 
