@@ -1,7 +1,7 @@
 FROM descoped/atlassian-base
 MAINTAINER Ove Ranheim <oranheim@gmail.com>
 
-# Install Fisheye and optionally Crucible
+# Install Fisheye and Crucible
 ENV FISHEYE_VERSION 4.0.1
 ENV CRUCIBLE_VERSION $FISHEYE_VERSION
 
