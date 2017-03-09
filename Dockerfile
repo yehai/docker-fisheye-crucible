@@ -13,7 +13,7 @@ ENV GID atlassian
 ENV LANG C.UTF-8
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -q -y unzip \
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -q -y unzip ssh-client git \
     && rm -rf /var/lib/apt/lists/*
 RUN useradd -r --create-home --home-dir $FISHEYE_HOME --groups $GID --shell /bin/bash $UID \
     && curl -Lk http://www.atlassian.com/software/fisheye/downloads/binary/fisheye-$FISHEYE_VERSION.zip -o /root/fisheye.zip \
