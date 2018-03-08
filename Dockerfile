@@ -25,7 +25,7 @@ RUN useradd -r --create-home --home-dir $FISHEYE_HOME --groups $GID --shell /bin
     && mv /opt/fecru-$FISHEYE_VERSION/* $FISHEYE_HOME/ \
     && rm -f "${FISHEYE_HOME}/lib/atlassian-extras-*.*.jar" 
 
-COPY ./${FISHEYE_VERSION}/*.jar "${CONF_INSTALL}/lib/"
+COPY ./${FISHEYE_VERSION}/*.jar "${FISHEYE_HOME}/lib/"
 # Launching Fisheye
 WORKDIR $FISHEYE_HOME
 VOLUME ["$FISHEYE_INST"]
