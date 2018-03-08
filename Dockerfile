@@ -22,8 +22,10 @@ RUN useradd -r --create-home --home-dir $FISHEYE_HOME --groups $GID --shell /bin
     && rm /root/fisheye.zip \
     && unzip -o /root/crucible.zip -d /opt/ \
     && rm /root/crucible.zip \
-    && mv /opt/fecru-$FISHEYE_VERSION/* $FISHEYE_HOME/
+    && mv /opt/fecru-$FISHEYE_VERSION/* $FISHEYE_HOME/ \
+    && rm -f "${FISHEYE_HOME}/lib/atlassian-extras-*.*.jar" 
 
+COPY ./${FISHEYE_VERSION}/*.jar "${CONF_INSTALL}/lib/"
 # Launching Fisheye
 WORKDIR $FISHEYE_HOME
 VOLUME ["$FISHEYE_INST"]
